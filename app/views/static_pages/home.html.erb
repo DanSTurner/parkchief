@@ -1,2 +1,12 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "years of fun") %>
+
+<div class="jumbotron col-md-12">
+  <h1><i class="fa fa-calendar"></i> longviewr</h1>
+  <p>years of fun</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View your calendar", user_path(current_user), class: "btn btn-primary btn-lg" %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
