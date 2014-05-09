@@ -1,0 +1,12 @@
+<% provide(:title, "summit that park!") %>
+
+<div class="jumbotron col-md-12">
+  <h1><i class="fa fa-angle-double-up"></i> ParkChief</h1>
+  <p>summit that park!</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View your parks", user_path(current_user), class: "btn btn-primary btn-lg" %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
